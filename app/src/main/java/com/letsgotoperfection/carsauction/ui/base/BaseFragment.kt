@@ -1,4 +1,4 @@
-package com.letsgotoperfection.chillouttime.ui.base
+package com.letsgotoperfection.carsauction.ui.base
 
 import android.app.Fragment
 import android.os.Bundle

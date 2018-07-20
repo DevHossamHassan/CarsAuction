@@ -1,4 +1,4 @@
-package com.letsgotoperfection.chillouttime.ui.base
+package com.letsgotoperfection.carsauction.ui.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

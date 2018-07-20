@@ -1,12 +1,20 @@
-package com.letsgotoperfection.carsauction
+package com.letsgotoperfection.carsauction.ui
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
+import com.letsgotoperfection.carsauction.R
+import com.letsgotoperfection.carsauction.ui.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity() {
+
+    override fun getLayoutResourceId(): Int {
+        return R.layout.activity_main
+    }
+
+    override fun getTitleResourceId(): String {
+        return getString(R.string.app_name)
+    }
+
+    override fun init() {
+        //todo navigate to the main root fragment
     }
 }
