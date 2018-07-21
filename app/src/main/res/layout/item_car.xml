@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_movie"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:layout_marginEnd="@dimen/item_padding"
+    android:layout_marginTop="@dimen/item_padding"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/imgMovie"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:clickable="false"
+            android:scaleType="fitXY"
+            tools:background="@tools:sample/backgrounds/scenic"/>
+
+        <TextView
+            android:id="@+id/tvMovieTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:textColor="@android:color/darker_gray"
+            tools:text="@tools:sample/full_names"/>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
