@@ -1,4 +1,4 @@
-package com.letsgotoperfection.chillouttime.listeners
+package com.letsgotoperfection.carsauction.listeners
 
 import android.support.v7.graphics.Palette
 

@@ -25,3 +25,26 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+ext {
+
+    //support libraries
+    support_library_version = '27.1.1'
+    constraint_layout_version = '1.1.2'
+
+    // Reactive
+    rx_java_version = '2.1.0'
+    rx_android_version = '2.0.2'
+
+    // Retrofit
+    retrofit_version = '2.3.0'
+
+    // Images
+    glide_version = '4.7.1'
+    glide_palette_version = '2.1.2'
+
+    // Tests
+    espresso_version = '3.0.2'
+    junit_version = '4.12'
+    runner_version = '1.0.2'
+
+}

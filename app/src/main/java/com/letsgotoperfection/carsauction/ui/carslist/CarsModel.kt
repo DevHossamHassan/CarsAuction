@@ -1,16 +1,16 @@
-package com.letsgotoperfection.chillouttime.ui.movies
+package com.letsgotoperfection.carsauction.ui.carslist
 
-import com.letsgotoperfection.chillouttime.models.Movie
+import com.letsgotoperfection.carsauction.ui.models.Car
 
 
 /**
  * @author hossam.
  */
-object MoviesModel {
+object CarsModel {
     var currentPage = 0
-    var movies: List<Movie> = listOf()
+    var Cars: List<Car> = listOf()
 
     fun destroy() {
-        movies = emptyList()
+        Cars = emptyList()
     }
 }

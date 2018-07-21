@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="carsAuctionBarHintTextColor">#616164</color>
+    <color name="carsAuctionBarValueTextColor">#282828</color>
+    <color name="carsAuctionPrice">#4aae45</color>
 </resources>

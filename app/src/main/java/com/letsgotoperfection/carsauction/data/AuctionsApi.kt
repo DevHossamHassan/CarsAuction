@@ -1,6 +1,6 @@
-package com.letsgotoperfection.chillouttime.data
+package com.letsgotoperfection.carsauction.data
 
-import com.letsgotoperfection.chillouttime.models.Results
+import com.letsgotoperfection.carsauction.ui.models.AuctionResponse
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -8,7 +8,7 @@ import retrofit2.http.Query
 /**
  * @author hossam.
  */
-interface MoviesApi {
-    @GET("movie/now_playing")
-    fun getPlayingMovies(@Query("page") count: Int = 1): Flowable<Results>
+interface AuctionsApi {
+    @GET("carsonline")
+    fun getAuctions(@Query("page") count: Int = 1): Flowable<AuctionResponse>
 }

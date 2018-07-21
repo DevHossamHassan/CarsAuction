@@ -1,14 +1,14 @@
-package com.letsgotoperfection.chillouttime.ui.movies
+package com.letsgotoperfection.carsauction.ui.carslist
 
 import android.app.Fragment
-import com.letsgotoperfection.chillouttime.models.Movie
-import com.letsgotoperfection.chillouttime.ui.base.BaseContract
+import com.letsgotoperfection.carsauction.ui.base.BaseContract
+import com.letsgotoperfection.carsauction.ui.models.Car
 
 
 /**
  * @author hossam.
  */
-class MoviesContract : BaseContract {
+class CarsContract : BaseContract {
 
     interface View : BaseContract.View<Fragment> {
         fun showToast(msg: String)
@@ -18,12 +18,12 @@ class MoviesContract : BaseContract {
         fun showSwipeToRefreshProgressBar()
         fun hideLoadMoreProgressBar()
         fun showLoadMoreProgressBar()
-        fun navigateToDetailsFragment(movie: Movie)
+        fun navigateToDetailsFragment(Car: Car)
     }
 
     interface Presenter : BaseContract.Presenter {
-        fun getExistedMovies(): List<Movie>
-        fun getMoviesCount(): Int
+        fun getExistedCars(): List<Car>
+        fun getCarsCount(): Int
         fun onQueryChanged()
         fun onLoadMore()
         fun destroy()

@@ -1,10 +1,10 @@
-package com.letsgotoperfection.chillouttime.ui.movies
+package com.letsgotoperfection.carsauction.ui.carslist
 
 import android.annotation.SuppressLint
 import android.util.Log
-import com.letsgotoperfection.chillouttime.data.RetrofitProvider
-import com.letsgotoperfection.chillouttime.models.Movie
-import com.letsgotoperfection.chillouttime.ui.base.BasePresenter
+import com.letsgotoperfection.carsauction.data.RetrofitProvider
+import com.letsgotoperfection.carsauction.ui.base.BasePresenter
+import com.letsgotoperfection.carsauction.ui.models.Car
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -12,49 +12,49 @@ import io.reactivex.schedulers.Schedulers
 /**
  * @author hossam.
  */
-class MoviesPresenter(private val MoviesView: MoviesContract.View)
-    : BasePresenter<MoviesContract.View>(MoviesView), MoviesContract.Presenter {
+class CarsPresenter(private val CarsView: CarsContract.View)
+    : BasePresenter<CarsContract.View>(CarsView), CarsContract.Presenter {
 
-    override fun getExistedMovies(): List<Movie> {
-        return MoviesModel.movies
+    override fun getExistedCars(): List<Car> {
+        return CarsModel.Cars
     }
 
-    override fun getMoviesCount(): Int {
-        return MoviesModel.movies.size
+    override fun getCarsCount(): Int {
+        return CarsModel.Cars.size
     }
 
     override fun onQueryChanged() {
-        getMovies()
+        getCars()
     }
 
     override fun onLoadMore() {
-        getMovies(++MoviesModel.currentPage)
+        getCars(++CarsModel.currentPage)
     }
 
     @SuppressLint("CheckResult")
-    private fun getMovies(page: Int = 1) {
-        if (page > 1) {
-            MoviesView.showLoadMoreProgressBar()
-        } else {
-            MoviesView.showSwipeToRefreshProgressBar()
-        }
-        RetrofitProvider.loadMovies(page)
+    private fun getCars(page: Int = 1) {
+//        if (page > 1) {
+//            CarsView.showLoadMoreProgressBar()
+//        } else {
+//            CarsView.showSwipeToRefreshProgressBar()
+//        }
+        RetrofitProvider.loadCarAuctions(page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    MoviesModel.movies += it.results
-                    MoviesModel.currentPage = it.page
-                    MoviesView.updateDate()
-                    MoviesView.hideSwipeToRefreshProgressBar()
-                    MoviesView.hideLoadMoreProgressBar()
+                    CarsModel.Cars += it.Cars
+                    CarsModel.currentPage = it.count
+                    CarsView.updateDate()
+                    CarsView.hideSwipeToRefreshProgressBar()
+                    CarsView.hideLoadMoreProgressBar()
                 }, { e ->
-                    MoviesView.hideSwipeToRefreshProgressBar()
-                    MoviesView.hideLoadMoreProgressBar()
-                    Log.e("MoviesPresenter", "Exception Occurred while Moviesing = " + e.message)
+                    CarsView.hideSwipeToRefreshProgressBar()
+                    CarsView.hideLoadMoreProgressBar()
+                    Log.e("CarsPresenter", "Exception Occurred while Carsing = " + e.message)
                 })
     }
 
     override fun destroy() {
-        MoviesModel.destroy()
+        CarsModel.destroy()
     }
 }

@@ -1,7 +1,9 @@
 package com.letsgotoperfection.carsauction.ui
 
+import com.letsgotoperfection.carsauction.NavigationManager
 import com.letsgotoperfection.carsauction.R
 import com.letsgotoperfection.carsauction.ui.base.BaseActivity
+import com.letsgotoperfection.carsauction.ui.carslist.CarsFragment
 
 
 class MainActivity : BaseActivity() {
@@ -15,6 +17,6 @@ class MainActivity : BaseActivity() {
     }
 
     override fun init() {
-        //todo navigate to the main root fragment
+        NavigationManager.attachAsRoot(this, CarsFragment())
     }
 }

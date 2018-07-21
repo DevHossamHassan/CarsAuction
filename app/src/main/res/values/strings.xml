@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CarsAuction</string>
+    <string name="sort">Sort</string>
+    <string name="gridView">Grid View</string>
+    <string name="filter">Filter</string>
+    <string name="lot">lot#</string>
+    <string name="bids">Bids</string>
+    <string name="time">Time Left</string>
 </resources>
