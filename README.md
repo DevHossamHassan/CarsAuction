@@ -13,7 +13,7 @@ If you want to want to run the app from the source code
 hit run and that's it :tada: 
 
 ## Screenshots 
-<img src="https://imgur.com/a/mjXoSpd" width=250 >
+<img src="https://user-images.githubusercontent.com/6613841/43035418-64e843ae-8cef-11e8-9c7b-9f007f38678b.png" width=250 >
 
 
 ## tools were used in this project 
